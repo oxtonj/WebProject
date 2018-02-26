@@ -1,4 +1,4 @@
-// FRONT END
+//F R O N T   E N D
 class KitchenView 
 {
 	constructor(openOrders, out)
@@ -28,7 +28,6 @@ class KitchenView
 					+ "</td></tr>"; 
 					for (var x = 0; x < this.order.courses.length; x++)
 					{
-						console.log(this.order.courses[x]);	
 						if (this.order.courses[x].length > 0)
 						{
 							displayCourse(this.order.orderID, this.order.courses[x]);
@@ -76,7 +75,7 @@ class KitchenView
 		}
 	}
 }
-
-var kv = new KitchenView(orders, output);
+var neworders = orders;
+var kv = new KitchenView(neworders, output);
 kv.displayAllOrders();
 

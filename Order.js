@@ -1,9 +1,11 @@
+// B A C K   E N D
 // model for order factory, single course order, double course order and triple course order
 // order factory checks number of Course, returns relevant order object
 class OrderFactory
 {
 	constructor()
 	{
+		// 
 		this.getOrder = function(order, notes)
 		{
 			var o;
@@ -27,13 +29,21 @@ class OrderFactory
 class OrderSingle
 {
 	//constructor (tableNumber, notes, starters, mains, deserts)
-	constructor (tableNumber, orderID, firstCourse, notes)
+	constructor (tableNumber, firstCourse, notes)
 	{
+		this.orderID;
 		this.tableNumber = tableNumber;
-		this.orderID = orderID;
 		this.firstCourse = firstCourse; 
 		this.courses = [firstCourse]
-		if (notes != null) {this.notes = notes;}
+		
+		if (notes != null) 
+		{
+			this.notes = notes;
+		}
+		this.setID(id)
+		{
+			this.orderID = id;
+		}
 		
 		this.removeItem = function(itemID)
 		{
@@ -58,22 +68,25 @@ class OrderSingle
 		}
 	}
 }
+
 class OrderDouble
 {
 	//constructor (tableNumber, notes, starters, mains, deserts)
-	constructor (tableNumber, orderID, firstCourse, secondCourse, notes)
+	constructor (tableNumber, firstCourse, secondCourse, notes)
 	{
 		this.tableNumber = tableNumber;
-		this.orderID = orderID;
+		this.orderID;
 		this.firstCourse = firstCourse;
 		this.secondCourse = secondCourse;
 		this.courses = [firstCourse, secondCourse]
 		if (notes != null){this.notes = notes;}
+		this.setID(id)
+		{
+			this.orderID = id;
+		}
 		
 		this.removeItem = function(itemID)
 		{
-			console.log("removing item with id : " + itemID);
-			
 			if (getItemIndex(this.firstCourse, itemID) != -1)
 			{
 				this.firstCourse.splice(getItemIndex(this.firstCourse, itemID), 1);
@@ -108,15 +121,19 @@ class OrderDouble
 class OrderTriple
 {
 	//constructor (tableNumber, notes, starters, mains, deserts)
-	constructor (tableNumber, orderID, firstCourse, secondCourse, thirdCourse, notes)
+	constructor (tableNumber, firstCourse, secondCourse, thirdCourse, notes)
 	{
 		this.tableNumber = tableNumber;
-		this.orderID = orderID;
+		this.orderID;
 		this.firstCourse = firstCourse;
 		this.secondCourse = secondCourse;
 		this.thirdCourse = thirdCourse;
 		this.courses = [firstCourse, secondCourse, thirdCourse]
 		if (notes != null){this.notes = notes;}
+		this.setID(id)
+		{
+			this.orderID = id;
+		}
 		
 		this.removeItem = function(itemID)
 		{
@@ -141,7 +158,6 @@ class OrderTriple
 				thirdCourse.splice(getItemIndex(this.thirdCourse, itemID), 1);
 				if (this.thirdCourse.length < 1)
 				{
-					console.log(this.courses.length - 1);
 					this.courses.splice(this.courses.length - 1, 1);
 				}
 			}
@@ -161,9 +177,10 @@ class OrderTriple
 		}
 	}
 }
+
 var notacircus = new OrderFactory();
 orders = [];
 
-orders.push(notacircus.getOrder([3, 1001, [a,b]], "Free Of Charge"));
-orders.push(notacircus.getOrder([8, 1002, [b,b], [a,b,c,]]));
-orders.push(notacircus.getOrder([2, 1003, [a,b,b,c], [a,b,a,], [b,c]], "No Soy"));
+orders.push(notacircus.getOrder([3, [a,b]], "Free Of Charge"));
+orders.push(notacircus.getOrder([8, [b,b], [a,b,c,]]));
+orders.push(notacircus.getOrder([2, [a,b,b,c], [a,b,a,], [b,c]], "No Soy"));

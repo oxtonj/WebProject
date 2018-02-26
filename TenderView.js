@@ -1,3 +1,4 @@
+//F R O N T   E N D
 class WaiterView
 {
 	constructor(menu, out)
@@ -19,11 +20,19 @@ class WaiterView
 				}
 			}
 		}
+		this.createOrder = function(object)
+		{
+			// items should be [int tableNumber, int orderId, [MenuItem menuItem, MenuItem menuItem...], String notes]
+			// send order object to server
+			return object;
+		}
 	}
 }
 
 mymenu = [a, b, c];
 console.log(output);
 var wv = new WaiterView(mymenu, output);
+var no = wv.createOrder([14, [a, c], [b, c]], "Milk Steak"]);
+console.log(no);
 
 wv.displayMenu();
