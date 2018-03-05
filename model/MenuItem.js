@@ -15,6 +15,4 @@ class MenuItem
 	}
 }
 
-var a = new MenuItem(201, "Chips", 7.50);
-var b = new MenuItem(202, "Soup", 9);
-var c = new MenuItem(203, "Steak", 18);
+module.exports = MenuItem;
