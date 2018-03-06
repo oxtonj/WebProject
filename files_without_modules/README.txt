@@ -1,0 +1,3 @@
+-Download all of the contents and install node using "npm install" (the package.json file is included to do this).
+-run by going to the directory and typing "npm start"
+-address is localhost:3000 and /menu for the database pull and /newitem for adding new data
