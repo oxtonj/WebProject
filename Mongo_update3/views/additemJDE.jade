@@ -1,0 +1,12 @@
+extends layout
+
+block content
+	h1= title
+		form#formAddItem(name="additem",method="post",action="/additem")
+			input#inputItemId(type="text", placeholder="itemid", name="itemid")
+			input#inputItemName(type="text", placeholder="itemname", name="itemname")
+			input#inputItemPrice(type="text", placeholder="itemprice", name="itemprice")
+			input#inputItemCourse(type="text", placeholder="itemcourse", name="itemcourse")
+			input#inputItemVeg(type="text", placeholder="itemveg", name="itemveg")
+			button#btnSubmit(type="submit") submit
+			button#btnReset(type="reset") reset

@@ -1,0 +1,22 @@
+extends layout
+
+block content
+	h1= title
+	
+	// Wrapper
+	#wrapper
+	
+		// TABLES
+		#tables
+			form#formAddItem(name="selecttable",method="post",action="/selecttable")
+				button#btnTb1(type="submit") Table 1
+				button#btnTb2(type="submit") Table 2
+				button#btnTb3(type="submit") Table 3
+				button#btnTb4(type="submit") Table 4
+				button#btnTb5(type="submit") Table 5
+				button#btnTb6(type="submit") Table 6
+				button#btnTb7(type="submit") Table 7
+				button#btnTb8(type="submit") Table 8
+			// /tables
+		
+	// /Wrapper	
