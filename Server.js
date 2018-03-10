@@ -20,7 +20,7 @@ io.on("connection", function(socket)
 		menu = DAO.getMenu();
 		socket.emit("menures", menu);
 	});
-	socket.on("openordersreq", function()
+	socket.on("ordersreq", function()
 	{
 		console.log("Open Orders Request");
 		if (openOrders.length < 1)
